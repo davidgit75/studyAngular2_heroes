@@ -3,18 +3,32 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './app.component';
+import { PathsComponent } from './paths.component';
+import { PathDetailComponent } from './path-detail.component';
+import { HomeComponent } from './home.component';
+
+import { RouterModule } from '@angular/router';
+import { ROUTES } from './routes';
+
+import { PathService } from './path.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    PathsComponent,
+    PathDetailComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot([
+      {path: "", component: HomeComponent},
+      {path: "paths", component: PathsComponent},
+      {path: "path-detail", component: PathDetailComponent}
+    ])
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [PathService],
+  bootstrap: [HomeComponent]
 })
 export class AppModule { }

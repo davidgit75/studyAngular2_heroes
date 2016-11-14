@@ -1,0 +1,10 @@
+<h1>{{title}}</h1>
+
+<ul class="paths">
+    <li *ngFor="let path of paths" (click)="onSelect(path)">
+        <span class="badge">{{path._id}}</span>
+          {{path.name}}
+    </li>
+</ul>
+
+<path-detail [path]="selectedPath"></path-detail>

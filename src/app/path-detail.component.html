@@ -1,0 +1,8 @@
+<div *ngIf="path">
+    <h2>{{path.name}} detalles </h2>
+    <div><label>_id: </label>{{path._id}}</div>
+    <div>
+        <label>name: </label>
+        <input [(ngModel)]="path.name" placeholder="name"/>
+    </div>
+</div>
